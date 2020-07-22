@@ -23,21 +23,25 @@ public class BaseViewModel extends ViewModel {
     private MutableLiveData<String> mKeyword = new MutableLiveData<>();
 
 
-    //2 经过BaseRepository转换过来的LiveData
+    //2 经过BaseRepository转换过来的LiveData  如果viewModel 不需要额外的处理 view层可以使用这些数据了
     private LiveData<String> mRepositoryData = Transformations.switchMap(mKeyword, new Function<String, LiveData<String>>() {
         @Override
         public LiveData<String> apply(String input) {
-            LogUtils.i("LiveData --> BaseRepository转换");
+            LogUtils.i("LiveData --> BaseRepository转换，这是viewModel需要的数据");
             return BaseRepository.getData(input);
         }
     });
 
-    //3 在viewModel内部进行转换的liveData
+    //3 在viewModel内部进行转换的liveData 如果viewModel 需要额外的处理 view层才可以使用这些数据
+    //建议在这里做一次判断，以处理错误/空白等情况
+    //空白好处理 size = 0 即可   关键是错误如何来体现？
+    // 使用一个static变量来绑定 发生错误时，Repository 修改该变量以达到更新UI的目的
+    // BaseViewModel.mError.setValue("出现错误啦！！！");
     public MutableLiveData<List<String>> mData = (MutableLiveData<List<String>>) Transformations.map(mRepositoryData, new Function<String,
             List<String>>() {
         @Override
         public List<String> apply(String input) {
-            LogUtils.i("LiveData --> map转换");
+            LogUtils.i("LiveData --> map转换，这是view需要的数据");
             ArrayList<String> strings = new ArrayList<>();
             //.....
             strings.add(input);
@@ -65,12 +69,12 @@ public class BaseViewModel extends ViewModel {
     //**********************  通用变量封装 ***************************//
     //定义一个加载错误的liveData
     //如果发生错误 更新该变量，view层监听该变量，及时在界面更新UI
-    public MutableLiveData<String> mError = new MutableLiveData<>();
+    public static MutableLiveData<String> mError = new MutableLiveData<>();
 
 
     //定义一个空加载的liveData
     //如果发生空白加载 更新该变量，view层监听该变量，及时在界面更新UI
     public MutableLiveData<String> mEmpty = new MutableLiveData<>();
-    
+
     //**********************  通用变量封装 ***************************//
 }

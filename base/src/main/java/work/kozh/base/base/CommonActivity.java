@@ -29,7 +29,7 @@ public abstract class CommonActivity extends BaseActivity {
 
         //在这里监听错误与空白变化
         mBaseViewModel = ViewModelProviders.of(this).get(BaseViewModel.class);
-        mBaseViewModel.mError.observe(this, new Observer<String>() {
+        BaseViewModel.mError.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 onError(s);

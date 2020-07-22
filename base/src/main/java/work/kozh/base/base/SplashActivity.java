@@ -29,9 +29,9 @@ import work.kozh.base.utils.UIUtils;
 public abstract class SplashActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private FrameLayout mFlSplash;
-    private ImageView mIvSplash;
-    private Button mBtnSkip;
+    public FrameLayout mFlSplash;
+    public ImageView mIvSplash;
+    public Button mBtnSkip;
 
     //设定倒计时时间
     private int skipTime = 3;

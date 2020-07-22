@@ -1,6 +1,5 @@
 package work.kozh.baseframe;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -8,12 +7,13 @@ import com.lxj.xpopup.XPopup;
 
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import work.kozh.base.base.BaseViewModel;
+import work.kozh.base.base.CommonActivity;
 import work.kozh.base.dialog.CommonCenterDialog;
 import work.kozh.base.utils.LogUtils;
+import work.kozh.base.utils.ToastUtils;
 import work.kozh.request.retrofit.Network;
 import work.kozh.request.retrofit.utils.NetLogUtils;
 
@@ -21,29 +21,10 @@ import work.kozh.request.retrofit.utils.NetLogUtils;
  * 提供基本的初始框架 loading初始化界面 网络解锁等
  * 基于 MVVM 框架
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends CommonActivity {
 
     private BaseViewModel mBaseViewModel;
     private TextView mTv;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        findView();
-        mBaseViewModel = ViewModelProviders.of(this).get(BaseViewModel.class);
-        mBaseViewModel.mData.observe(this, new Observer<List<String>>() {
-            @Override
-            public void onChanged(List<String> strings) {
-                //监听数据变化 更新UI
-                for (String string : strings) {
-                    LogUtils.i("BaseActivity 正在监听数据变化 更新UI --> " + string);
-                }
-                mTv.setText("数据发生变化-->" + strings.get(0));
-
-            }
-        });
-    }
 
     public void onClick(View view) {
         //测试MVVM ViewModel LiveData
@@ -71,6 +52,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void findView() {
-        mTv = findViewById(R.id.tv_title);
+        mTv = mView.findViewById(R.id.tv_title);
+    }
+
+    @Override
+    protected void init() {
+        findView();
+        mBaseViewModel = ViewModelProviders.of(this).get(BaseViewModel.class);
+        mBaseViewModel.mData.observe(this, new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> strings) {
+                //监听数据变化 更新UI
+                for (String string : strings) {
+                    LogUtils.i("BaseActivity 正在监听数据变化 更新UI --> " + string);
+                }
+                mTv.setText("数据发生变化-->" + strings.get(0));
+
+            }
+        });
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void onError(String msg) {
+        LogUtils.i("在主页检测到获取数据时发生了错误-->" + msg);
+        ToastUtils.error(this, msg);
+    }
+
+    @Override
+    protected void onEmpty() {
+
     }
 }

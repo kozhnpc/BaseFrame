@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    api 'com.github.ybq:Android-SpinKit:1.4.0' //loading加载库
+    api 'me.weyye.hipermission:library:1.0.7' //一键申请动态权限
+    api 'com.kongzue.dialog_v3:dialog:3.1.8' //toast样式
+    api 'com.github.GrenderG:Toasty:1.4.2' //toast样式
+    api 'com.lxj:xpopup:2.0.5-rc3'//Xpopup
+
+    api 'androidx.lifecycle:lifecycle-extensions:2.0.0' //LivaData MVVM
+//    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"  //单独引入viewmodel
+//    implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"//livadata
+
+    api 'androidx.multidex:multidex:2.0.1'
+    api 'androidx.palette:palette:1.0.0'
+    api 'com.github.bumptech.glide:glide:3.7.0'
+    api project(path: ':network')
+    //    implementation 'com.github.kozhnpc:Network:2.0' //引入自己封装的网络请求框架 和 RxBus
+
+
+}

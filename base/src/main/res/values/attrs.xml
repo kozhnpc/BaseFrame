@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="ate_key" format="string"/>
+
+    <declare-styleable name="TimelyView">
+        <attr name="text_color" format="color"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="FastScrollRecyclerView">
+        <attr name="fastScrollThumbColor" format="reference|color"/>
+        <attr name="fastScrollTrackColor" format="reference|color"/>
+        <attr name="fastScrollPopupBgColor" format="reference|color"/>
+        <attr name="fastScrollPopupTextColor" format="reference|color"/>
+        <attr name="fastScrollPopupTextSize" format="reference|dimension"/>
+        <attr name="fastScrollPopupBackgroundSize" format="reference|dimension"/>
+        <attr name="fastScrollAutoHide" format="reference|boolean"/>
+        <attr name="fastScrollAutoHideDelay" format="reference|integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="ForegroundImageView">
+        <attr name="android:foreground"/>
+    </declare-styleable>
+
+    <declare-styleable name="PlayPause">
+        <attr name="isCircleDraw" format="boolean"/>
+        <attr name="circleAlpha" format="integer"/>
+        <attr name="backgroundColor" format="reference|color"/>
+        <attr name="drawableColor" format="reference|color"/>
+    </declare-styleable>
+
+    <declare-styleable name="GADownloadingView">
+
+        <attr name="arrow_color" format="color"/>
+        <attr name="loading_circle_back_color" format="color"/>
+        <attr name="loading_line_color" format="color"/>
+        <attr name="progress_line_color" format="color"/>
+        <attr name="progress_text_color" format="color"/>
+        <attr name="done_text_color" format="color"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="MiClockView">
+        <attr name="backgroundColor_Mi" format="color"/>
+        <attr name="lightColor" format="color"/>
+        <attr name="darkColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="RatioLayout">
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalProgressbarWithProgress">
+        <attr name="progress_unreach_color"  format="color"/>
+        <attr name="progress_unreach_height"  format="dimension"/>
+        <attr name="progress_reach_color"  format="color"/>
+        <attr name="progress_reach_height"  format="dimension"/>
+        <attr name="progress_text_color1" format="color"/>
+        <attr name="progress_text_size"  format="dimension"/>
+        <attr name="progress_text_offset"  format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundProgressBarWithProgress">
+        <attr name="radius"  format="dimension"/>
+    </declare-styleable>
+
+
+
+</resources>

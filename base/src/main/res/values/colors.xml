@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--默认文字文本的颜色-->
+    <color name="common_colorPrimary">#4CAF50</color>
+    <!--下面是状态栏的颜色-->
+    <color name="common_colorPrimaryDark">#0d86f7</color>
+    <!--  默认的控件背景色  也是SwitchPreference的颜色，是SwitchPreference的背景颜色-->
+    <color name="common_colorAccent">#CEA203</color>
+
+    <!--文本carview的颜色-->
+    <color name="common_main">#5df162</color>
+    <color name="common_sub">#000000</color>
+    <color name="common_right">#e41616</color>
+
+
+    <color name="common_black">#000000</color>
+    <color name="common_grey">#212C2C</color>
+    <color name="common_view">#EBF0F0</color>
+    <color name="common_video">#BF0000</color>
+    <color name="common_red">#FF0000</color>
+    <color name="common_blue">#0386FA</color>
+    <color name="common_green">#00897B</color>
+    <color name="common_yellow">#FFEA00</color>
+    <color name="common_orange">#C5DBB8</color>
+
+    <color name="common_click">#D1D1A4</color>
+
+    <color name="common_delete">#b7b8bd</color>
+
+    <!--    Splash界面的背景色-->
+    <color name="common_splash_bg">#2EB3FF</color>
+
+
+    <!--    选择路径的按钮颜色-->
+    <color name="btn_local_refresh">#bdf59d</color>
+    <color name="btn_current_dir_refresh">#f15f5f</color>
+    <color name="btn_back_dir_refresh">#778af4</color>
+
+
+    <!--   switch 的各类颜色 -->
+    <color name="switch_bgColor">#F7F3EE</color>
+    <color name="switch_leftColor">#1DE9B6</color>
+    <color name="switch_rightColor">#8cc152</color>
+    <color name="switch_textLeftClickColor">#000000</color>
+    <color name="switch_textLeftColor">#8cc152</color>
+    <color name="switch_textRightClickColor">#000000</color>
+    <color name="switch_textRightColor">#8cc152</color>
+
+
+    <color name="common_transparent">#00ffffff</color>
+
+    <!--   音乐播放颜色标识 -->
+    <color name="common_music_playing">#3D5AFE</color>
+    <color name="common_music_no_playing">#363636</color>
+
+    <!--    二级加载的文字颜色-->
+    <color name="loading_second_color">#651FFF</color>
+
+    <!--         测试          -->
+
+    <color name="colorTextTitle">#333333</color>
+    <color name="colorTextContent">#444444</color>
+    <color name="colorTextAssistant">#888888</color>
+
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorBackgroundDark">#f2f2f2</color>
+    <color name="colorDivision">#33aaaaaa</color>
+
+
+    <!--         测试          -->
+
+
+</resources>

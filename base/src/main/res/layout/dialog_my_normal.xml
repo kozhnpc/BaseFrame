@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_dialog_circle_my_bg"
+    android:orientation="vertical">
+
+    <!--对话框标题区域-->
+    <LinearLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="这是标题"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_17"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="left"
+            android:text="这是主要的信息"
+            android:textColor="@color/common_grey"
+            android:textSize="@dimen/sp_16" />
+
+    </LinearLayout>
+
+
+    <!--对话框按钮-->
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_8"
+        android:weightSum="5">
+
+        <!--确认按钮-->
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_weight="2"
+            android:background="@drawable/selector_common_click"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="确认"
+            android:textColor="@color/common_blue"
+            android:textSize="@dimen/sp_14" />
+
+        <!--退出按钮-->
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_weight="2"
+            android:background="@drawable/selector_common_click"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="取消"
+            android:textColor="@color/common_red"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+</LinearLayout>

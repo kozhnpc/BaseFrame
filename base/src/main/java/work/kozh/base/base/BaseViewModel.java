@@ -34,7 +34,8 @@ public class BaseViewModel extends ViewModel {
 
     //3 在viewModel内部进行转换的liveData 如果viewModel 需要额外的处理 view层才可以使用这些数据
     //建议在这里做一次判断，以处理错误/空白等情况
-    //空白好处理 size = 0 即可   关键是错误如何来体现？
+    //空白好处理 size = 0 即可   在这里就可以处理了 判断返回的数据有效性
+    // 关键是错误如何来体现？
     // 使用一个static变量来绑定 发生错误时，Repository 修改该变量以达到更新UI的目的
     // BaseViewModel.mError.setValue("出现错误啦！！！");
     public MutableLiveData<List<String>> mData = (MutableLiveData<List<String>>) Transformations.map(mRepositoryData, new Function<String,
@@ -45,6 +46,7 @@ public class BaseViewModel extends ViewModel {
             ArrayList<String> strings = new ArrayList<>();
             //.....
             strings.add(input);
+            onEmpty();//判空
             return strings;
         }
     });
@@ -64,7 +66,7 @@ public class BaseViewModel extends ViewModel {
 //        return mBaseData;
 //    }
 
-    //**********************  这是使用指南  ***************************//
+    //**********************  这是使用指南 end ***************************//
 
     //**********************  通用变量封装 ***************************//
     //定义一个加载错误的liveData
@@ -76,5 +78,9 @@ public class BaseViewModel extends ViewModel {
     //如果发生空白加载 更新该变量，view层监听该变量，及时在界面更新UI
     public MutableLiveData<String> mEmpty = new MutableLiveData<>();
 
-    //**********************  通用变量封装 ***************************//
+    //当发现返回的数据为空时 让子类调用即可
+    public void onEmpty() {
+        mEmpty.setValue("");
+    }
+    //**********************  通用变量封装  end ***************************//
 }

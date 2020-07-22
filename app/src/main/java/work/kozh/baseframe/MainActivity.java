@@ -85,6 +85,6 @@ public class MainActivity extends CommonActivity {
 
     @Override
     protected void onEmpty() {
-
+        LogUtils.i("在主页检测到获取数据时发现为空");
     }
 }

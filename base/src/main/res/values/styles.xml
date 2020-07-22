@@ -114,15 +114,15 @@
     </style>
 
     <!--Fab的主题设置-->
-    <style name="FabStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/dp_15</item>
-        <item name="borderWidth">@dimen/dp_0</item>
-        <item name="elevation">@dimen/dp_5</item>
-        <item name="pressedTranslationZ">@dimen/dp_10</item>
-        <item name="rippleColor">@android:color/white</item>
-    </style>
+<!--    <style name="FabStyle">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:layout_margin">@dimen/dp_15</item>-->
+<!--        <item name="borderWidth">@dimen/dp_0</item>-->
+<!--        <item name="elevation">@dimen/dp_5</item>-->
+<!--        <item name="pressedTranslationZ">@dimen/dp_10</item>-->
+<!--        <item name="rippleColor">@android:color/white</item>-->
+<!--    </style>-->
     <!--文字大小设置-->
     <style name="TextApperance.Artist.Title" parent="@style/TextAppearance.AppCompat.Small">
         <item name="android:textSize">@dimen/sp_18</item>
@@ -143,143 +143,9 @@
         <item name="android:textSize">@dimen/sp_14</item>
     </style>
 
-    <style name="music_time_seek_bar" parent="Widget.AppCompat.SeekBar">
-        <item name="android:thumb">@mipmap/music_icon_seekbar_thumb</item>
-    </style>
-
-
-    <!--      测试       -->
-
-    <style name="AppTheme.Label">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:textSize">@dimen/sp_13</item>
-        <item name="android:textColor">@color/colorTextContent</item>
-    </style>
-
-    <style name="AppTheme.Label.Title">
-        <item name="android:textColor">@color/colorTextTitle</item>
-        <item name="android:textSize">@dimen/sp_15</item>
-    </style>
-
-    <style name="AppTheme.Label.Description">
-        <item name="android:gravity">top</item>
-        <item name="android:lineSpacingExtra">@dimen/dp_4</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:textSize">@dimen/sp_15</item>
-        <item name="android:singleLine">false</item>
-    </style>
-
-    <style name="AppTheme.Label.Layout">
-        <item name="android:paddingTop">@dimen/dp_10</item>
-        <item name="android:paddingBottom">@dimen/dp_10</item>
-        <item name="android:paddingLeft">@dimen/dp_15</item>
-        <item name="android:paddingRight">@dimen/dp_15</item>
-    </style>
-
-    <style name="AppTheme.Division">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/dp_0_5</item>
-        <item name="android:dividerHeight">@dimen/dp_0_5</item>
-        <item name="android:divider">@color/colorDivision</item>
-        <item name="android:background">@color/colorDivision</item>
-    </style>
-
-    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.ActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
-        <item name="android:background">?attr/colorPrimary</item>
-        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-    </style>
-
-    <style name="AppTheme.CommonBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="AppTheme.CommonBar.Panel">
-        <!--<item name="android:paddingTop">@dimen/division_line</item>-->
-        <!--<item name="android:paddingBottom">@dimen/division_line</item>-->
-        <item name="android:layout_marginTop">@dimen/dp_10</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:background">@drawable/layerlist_test_background_panel</item>
-    </style>
-
-    <style name="AppTheme.CommonBar.PanelLayout">
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:paddingBottom">@dimen/dp_10</item>
-        <item name="android:background">@color/colorBackgroundDark</item>
-    </style>
-
-    <style name="AppTheme.CommonBar.Bar">
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:paddingTop">@dimen/dp_3</item>
-        <item name="android:paddingBottom">@dimen/dp_3</item>
-        <item name="android:paddingLeft">@dimen/dp_10</item>
-        <item name="android:paddingRight">@dimen/dp_10</item>
-        <!--<item name="android:paddingTop">@dimen/dimenPaddingDiminutive</item>-->
-        <!--<item name="android:paddingBottom">@dimen/dimenPaddingDiminutive</item>-->
-
-        <item name="android:background">?android:attr/selectableItemBackground</item>
-        <!--<item name="android:background">@drawable/af_selector_background_white</item>-->
-    </style>
-
-    <style name="AppTheme.CommonBar.Bar.Header">
-        <item name="android:paddingTop">@dimen/dp_0</item>
-        <item name="android:paddingBottom">@dimen/dp_0</item>
-        <item name="android:paddingLeft">@dimen/dp_10</item>
-        <item name="android:paddingRight">@dimen/dp_10</item>
-        <item name="android:background">?android:attr/selectableItemBackground</item>
-    </style>
-
-    <style name="AppTheme.CommonBar.Bar.Alone">
-        <item name="android:layout_marginTop">@dimen/dp_10</item>
-        <item name="android:background">@drawable/layerlist_test_background_panel</item>
-    </style>
-
-    <style name="AppTheme.CommonBar.Content" parent="AppTheme.Label">
-        <item name="android:singleLine">false</item>
-        <!--<item name="android:layout_margin">@dimen/dimenPaddingDiminutive</item>-->
-        <item name="android:gravity">center_vertical</item>
-        <!--<item name="android:paddingTop">2dp</item>-->
-        <!--<item name="android:paddingBottom">2dp</item>-->
-        <!--<item name="android:paddingLeft">@dimen/dimenPaddingDiminutive</item>-->
-        <!--<item name="android:paddingRight">@dimen/dimenPaddingCommon</item>-->
-        <item name="android:paddingTop">@dimen/dp_10</item>
-        <item name="android:paddingBottom">@dimen/dp_10</item>
-        <item name="android:paddingLeft">@dimen/dp_5</item>
-        <item name="android:paddingRight">@dimen/dp_5</item>
-        <item name="android:drawablePadding">@dimen/dp_10</item>
-    </style>
-
-    <style name="AppTheme.CommonBar.Content.Value">
-        <item name="android:layout_width">@dimen/dp_0</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="AppTheme.CommonBar.Value" parent="AppTheme.Label.Description">
-        <item name="android:layout_width">@dimen/dp_0</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/colorTextAssistant</item>
-        <item name="android:gravity">right|end</item>
-        <item name="android:paddingTop">@dimen/dp_10</item>
-        <item name="android:paddingBottom">@dimen/dp_10</item>
-        <item name="android:paddingLeft">@dimen/dp_15</item>
-        <item name="android:paddingRight">@dimen/dp_5</item>
-        <item name="android:drawablePadding">@dimen/dp_10</item>
-        <!--<item name="android:layout_marginEnd">@dimen/dimenPaddingDiminutive</item>-->
-        <item name="android:layout_gravity">center_vertical|end</item>
-        <item name="android:layout_centerVertical">true</item>
-        <item name="android:layout_alignParentRight">true</item>
-    </style>
-
-
-    <!--      测试       -->
+<!--    <style name="music_time_seek_bar" parent="Widget.AppCompat.SeekBar">-->
+<!--        <item name="android:thumb">@mipmap/music_icon_seekbar_thumb</item>-->
+<!--    </style>-->
 
 
     <!--    测试桌面歌词用-->

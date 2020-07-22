@@ -46,6 +46,7 @@ dependencies {
     api 'androidx.palette:palette:1.0.0'
     api 'com.github.bumptech.glide:glide:3.7.0'
     api project(path: ':network')
+    api project(path: ':global')
     //    implementation 'com.github.kozhnpc:Network:2.0' //引入自己封装的网络请求框架 和 RxBus
 
 

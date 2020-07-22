@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <!--<com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view_box"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading-gears.json"
+        app:lottie_loop="true" />-->
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/animation_view_box"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        app:SpinKit_Color="@color/common_blue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animation_view_box"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/common_loading"
+        android:textColor="@color/loading_second_color"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+
+</RelativeLayout>

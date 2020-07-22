@@ -14,4 +14,13 @@ public class MyActivity extends CommonActivity {
         return 0;
     }
 
+    @Override
+    protected void onError(String msg) {
+
+    }
+
+    @Override
+    protected void onEmpty() {
+    }
+
 }

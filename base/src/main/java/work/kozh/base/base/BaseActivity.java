@@ -64,6 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         });
 
+
 //        applyPermission(); //权限申请代码示例
 
     }

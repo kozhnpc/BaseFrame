@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.FloatRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -18,6 +15,10 @@ import android.view.WindowManager;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.regex.Pattern;
+
+import androidx.annotation.FloatRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
 import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
 

@@ -1,26 +1,25 @@
 package work.kozh.request.retrofit;
 
-import android.app.Application;
-import android.content.Context;
+import work.kozh.global.BaseApplication;
 
 
 /**
  * Created by 00115702 on 2018/12/12.
  */
 
-public class NetApplication extends Application {
+public class NetApplication extends BaseApplication {
 
-    public static Context ctx;
+   /* public static Context ctx;
 
 
     private static NetApplication sInstance;
 
 
-    /**
+    *//**
      * 获取Application对象
      *
      * @return
-     */
+     *//*
     public static synchronized NetApplication getInstance() {
         return sInstance;
     }
@@ -42,7 +41,7 @@ public class NetApplication extends Application {
 
     public static Context getCtx() {
         return ctx;
-    }
+    }*/
 
 
 }

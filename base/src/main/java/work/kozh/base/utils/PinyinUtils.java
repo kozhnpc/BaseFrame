@@ -1,6 +1,6 @@
 package work.kozh.base.utils;
 
-import android.support.v4.util.SimpleArrayMap;
+import androidx.collection.SimpleArrayMap;
 
 /**
  * 处理拼音

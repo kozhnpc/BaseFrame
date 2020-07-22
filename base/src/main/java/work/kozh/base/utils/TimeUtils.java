@@ -39,7 +39,7 @@ public class TimeUtils {
     }
 
     //这是倒计时执行方法
-    public static void runTimer(TextView textView, long timeInterval, TimerFinishListener listener) {
+    public static void runTimer(TextView textView, long timeInterval, final TimerFinishListener listener) {
         //先取消之前的任务
         cancelTimely();
         if (mTimer == null) {

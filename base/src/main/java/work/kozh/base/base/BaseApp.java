@@ -1,7 +1,6 @@
 package work.kozh.base.base;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -20,7 +19,7 @@ import work.kozh.base.utils.LogUtils;
  * Created by 00115702 on 2018/12/12.
  */
 
-public class BaseApplication extends Application {
+public class BaseApp extends work.kozh.global.BaseApplication {
 
     public static Context ctx;
     public static int mainThreadId;
@@ -31,7 +30,7 @@ public class BaseApplication extends Application {
     public static List<Activity> activities = new ArrayList<>();
     public static int ActivityCount = 0;
 
-    private static BaseApplication sInstance;
+    private static BaseApp sInstance;
     private SensorManager mSensorManager;
     //    private AccelerometerSensorEventListener mListener;
 
@@ -46,7 +45,7 @@ public class BaseApplication extends Application {
      *
      * @return
      */
-    public static synchronized BaseApplication getInstance() {
+    public static synchronized BaseApp getInstance() {
         return sInstance;
     }
 

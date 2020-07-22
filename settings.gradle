@@ -1,2 +1,2 @@
-include ':app', ':base', ':network'
+include ':app', ':base', ':network', ':global'
 rootProject.name='BaseFrame'

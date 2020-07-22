@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_empty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--   使用方法 -->
+
+    <!--    <ViewStub
+            android:id="@+id/view_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout="@layout/custom_empty_view"
+            android:visibility="gone" /> -->
+
+    <!--
+                mViewEmpty.setVisibility(View.GONE);
+                mRv.setVisibility(View.GONE);
+                mViewLoading.setVisibility(View.GONE);
+                mViewError.setVisibility(View.VISIBLE);
+                if (mViewError != null) {
+                    LinearLayout errorIv = mView.findViewById(R.id.view_error);
+                    errorIv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+                }
+    -->
+
+
+    <ImageView
+        android:id="@+id/image_empty"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_200"
+        android:src="@mipmap/widget_icon_loading_empty" />
+
+    <TextView
+        android:id="@+id/text_empty_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="暂时没有数据哦"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="@dimen/sp_14" />
+
+</LinearLayout>

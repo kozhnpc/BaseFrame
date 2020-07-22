@@ -14,7 +14,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
-import work.kozh.base.base.BaseApplication;
+import work.kozh.base.base.BaseApp;
 
 
 /**
@@ -28,7 +28,7 @@ public class UIUtils {
 
     //用于获取一些与Acticity相关的方法和成员，作用于UI界面等等
     public static Context getContext() {
-        return BaseApplication.getCtx();
+        return BaseApp.getCtx();
     }
 
 
@@ -49,12 +49,12 @@ public class UIUtils {
     //获取主线程的Id
     public static int getMainThreadId() {
 
-        return BaseApplication.getMainThreadId();
+        return BaseApp.getMainThreadId();
     }
 
     //获取Handler对象，用于向主线程传递信息
     public static Handler getHandler() {
-        return BaseApplication.getHandler();
+        return BaseApp.getHandler();
     }
 
 

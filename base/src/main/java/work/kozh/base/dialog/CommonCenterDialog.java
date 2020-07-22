@@ -12,6 +12,11 @@ import work.kozh.base.R;
 
 /**
  * 通用的居中显示的dialog
+ * <p>
+ * 使用方法
+ * new XPopup.Builder(getActivity())
+ * .asCustom(new ShowGuideDescDialog(getActivity(), "扫描结果", result))
+ * .show();
  */
 public class CommonCenterDialog extends CenterPopupView implements View.OnClickListener {
 
@@ -23,9 +28,9 @@ public class CommonCenterDialog extends CenterPopupView implements View.OnClickL
     private TextView mTvGuideContent;
     private TextView mTvConfirm;
 
-    public CommonCenterDialog(@NonNull Context context) {
-        super(context);
-    }
+//    public CommonCenterDialog(@NonNull Context context) {
+//        super(context);
+//    }
 
     public CommonCenterDialog(@NonNull Context context, String title, String description) {
         super(context);
@@ -54,19 +59,26 @@ public class CommonCenterDialog extends CenterPopupView implements View.OnClickL
         mTvTitle.setText(mTitle);
     }
 
-    public void setTitle(String title){
-        mTvTitle.setText(title);
+    public void setTitle(String title) {
+        if (mTitle != null) {
+            this.mTvTitle.setText(title);
+        }
+
     }
 
-    public void setConfirmText(String confirmText){
-        mTvConfirm.setText(confirmText);
+    public void setConfirmText(String confirmText) {
+        if (mTvConfirm != null) {
+            this.mTvConfirm.setText(confirmText);
+        }
     }
 
-    public void setConfirmTextVisibility(int visibility){
-        mTvConfirm.setVisibility(visibility);
+    public void setConfirmTextVisibility(int visibility) {
+        if (mTvConfirm != null) {
+            this.mTvConfirm.setVisibility(visibility);
+        }
     }
 
-    public void setContent(String content){
+    public void setContent(String content) {
         mTvGuideContent.setText(content);
     }
 

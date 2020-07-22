@@ -3,6 +3,8 @@ package work.kozh.base.base;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import work.kozh.base.widget.LoadingView;
 
 /**
@@ -11,6 +13,7 @@ import work.kozh.base.widget.LoadingView;
 public abstract class CommonActivity extends BaseActivity {
 
     protected View mView;
+    private BaseViewModel mBaseViewModel;
 
     //这里默认就实现loading界面返回成功代码 直接进入页面
     //如果需要在加载页面之前获取一些数据或耗时操作，可以在子类中重写该方法
@@ -23,6 +26,23 @@ public abstract class CommonActivity extends BaseActivity {
     @Override
     public View onLoadSuccessView() {
         mView = LayoutInflater.from(getBaseContext()).inflate(getLayoutId(), null);
+
+        //在这里监听错误与空白变化
+        mBaseViewModel = ViewModelProviders.of(this).get(BaseViewModel.class);
+        mBaseViewModel.mError.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                onError(s);
+            }
+        });
+
+        mBaseViewModel.mEmpty.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                onEmpty();
+            }
+        });
+
         init();
         return mView;
     }
@@ -41,4 +61,10 @@ public abstract class CommonActivity extends BaseActivity {
 
     //子类实现 传入layout布局ID
     protected abstract int getLayoutId();
+
+    //子类实现 错误
+    protected abstract void onError(String msg);
+
+    //子类实现 空白
+    protected abstract void onEmpty();
 }

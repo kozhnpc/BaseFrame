@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import work.kozh.base.widget.LoadingView;
 
 /**
@@ -26,24 +25,23 @@ public abstract class CommonActivity extends BaseActivity {
     @Override
     public View onLoadSuccessView() {
         mView = LayoutInflater.from(getBaseContext()).inflate(getLayoutId(), null);
-
+        init();
         //在这里监听错误与空白变化
-        mBaseViewModel = ViewModelProviders.of(this).get(BaseViewModel.class);
-        BaseViewModel.mError.observe(this, new Observer<String>() {
+//        mBaseViewModel = ViewModelProviders.of(this).get(BaseViewModel.class);
+        getViewModel().mError.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 onError(s);
             }
         });
 
-        mBaseViewModel.mEmpty.observe(this, new Observer<String>() {
+        getViewModel().mEmpty.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 onEmpty();
             }
         });
 
-        init();
         return mView;
     }
 
@@ -62,9 +60,14 @@ public abstract class CommonActivity extends BaseActivity {
     //子类实现 传入layout布局ID
     protected abstract int getLayoutId();
 
+    //子类实现 传入一个ViewModel对象
+    protected abstract BaseViewModel getViewModel();
+
     //子类实现 错误
     protected abstract void onError(String msg);
 
     //子类实现 空白
     protected abstract void onEmpty();
+
+
 }

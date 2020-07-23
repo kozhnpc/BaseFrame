@@ -13,13 +13,14 @@ import androidx.multidex.MultiDex;
 import work.kozh.base.utils.CrashUtils;
 import work.kozh.base.utils.FileUtils;
 import work.kozh.base.utils.LogUtils;
+import work.kozh.global.BaseApplication;
 
 
 /**
  * Created by 00115702 on 2018/12/12.
  */
 
-public class BaseApp extends work.kozh.global.BaseApplication {
+public class BaseApp extends BaseApplication {
 
     public static Context ctx;
     public static int mainThreadId;
@@ -61,14 +62,14 @@ public class BaseApp extends work.kozh.global.BaseApplication {
         mStartTime = System.currentTimeMillis();
         LogUtils.i("Application开始启动：" + mStartTime);
 
-        sInstance = this;
-
-
-        //获取全局变量   用这个 context可以避免内存泄漏  尽量使用
-        ctx = getApplicationContext();
-
-        mainThreadId = android.os.Process.myTid();
-        handler = new Handler();
+//        sInstance = this;
+//
+//
+//        //获取全局变量   用这个 context可以避免内存泄漏  尽量使用
+//        ctx = getApplicationContext();
+//
+//        mainThreadId = android.os.Process.myTid();
+//        handler = new Handler();
 
         //初始化CrashUtils
         CrashUtils.CrashCat.getInstance(this, FileUtils.getAppDir(), "crash.txt").start();
@@ -153,19 +154,18 @@ public class BaseApp extends work.kozh.global.BaseApplication {
     }
 
 
+//    public static Context getCtx() {
+//        return ctx;
+//    }
 
-    public static Context getCtx() {
-        return ctx;
-    }
-
-    public static int getMainThreadId() {
-        return mainThreadId;
-    }
-
-
-    public static Handler getHandler() {
-        return handler;
-    }
+//    public static int getMainThreadId() {
+//        return mainThreadId;
+//    }
+//
+//
+//    public static Handler getHandler() {
+//        return handler;
+//    }
 
 
     @Override

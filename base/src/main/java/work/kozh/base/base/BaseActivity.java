@@ -11,13 +11,10 @@ import java.util.List;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import me.weyye.hipermission.HiPermission;
 import me.weyye.hipermission.PermissionCallback;
 import me.weyye.hipermission.PermissionItem;
 import work.kozh.base.R;
-import work.kozh.base.utils.LogUtils;
 import work.kozh.base.widget.LoadingView;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -55,14 +52,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         //提取 基类的  ViewModel  liveData
         //ViewModelProviders.of(this).get(MyViewModel.class); 已被弃用
 //                        mBaseViewModel = new ViewModelProvider(BaseActivity.this).get(BaseViewModel.class);
-        mBaseViewModel = ViewModelProviders.of(BaseActivity.this).get(BaseViewModel.class);
-        mBaseViewModel.mData.observe(BaseActivity.this, new Observer<List<String>>() {
-            @Override
-            public void onChanged(List<String> strings) {
-                //监听数据变化 更新UI
-                LogUtils.i("BaseActivity 正在监听数据变化 更新UI");
-            }
-        });
+//        mBaseViewModel = ViewModelProviders.of(BaseActivity.this).get(BaseViewModel.class);
+//        mBaseViewModel.mData.observe(BaseActivity.this, new Observer<List<String>>() {
+//            @Override
+//            public void onChanged(List<String> strings) {
+//                //监听数据变化 更新UI
+//                LogUtils.i("BaseActivity 正在监听数据变化 更新UI");
+//            }
+//        });
 
 
 //        applyPermission(); //权限申请代码示例
